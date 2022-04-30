@@ -1,0 +1,19 @@
+{
+  "name": "rendu_js",
+  "version": "0.0.1",
+  "description": "Mini serv node pour rendu js theme clicker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "clicker"
+  ],
+  "author": "Adrien CHANOVE (Pradoxal_IV)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.0",
+    "socket.io": "^4.5.0"
+  }
+}

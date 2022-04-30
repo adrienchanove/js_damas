@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <title>Clicker Fest</title>
+</head>
+
+<body>
+    <script src="/js/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="/js/app.js"></script>
+
+
+
+    <div id="app">
+        <code>{{ message }}</code><br>
+        Bonjour voici mon petit projet présentant mes compétences en JS.<br>
+        Mon projet se compose de deux parties :<br>
+        <ul>
+            <li>Une partie qui est un visualizer audio</li>
+            <li>Une partie qui est un chat</li>
+        </ul>
+        <br>
+        Le chat est un mini jeu de type "chat" qui permet de discuter avec les autres utilisateurs.<br>
+        Le visualizer audio est un mini jeu de type "visualizer" qui permet de visualiser l'audio de la musique.<br>
+        <br>
+        Tout le code se repose sur mes souvenir et la doc mdn de javascript.<br>
+        J'ai utilisé VueJS pour le chat et js natif pour le visualizer audio ainsi que socket.io pour communiquer avec le serveur.<br>
+    </div>
+
+
+    <audio controls src="/audio/guardian.mp3" id="audio">
+        Your browser does not support the <code>audio</code> element.
+    </audio> <br>
+    <canvas id="canvas"></canvas>
+
+
+
+
+
+
+
+
+
+
+    <div id="tchat">
+        <div id="messages">
+            <div v-for="message in messages">
+
+                <div class="messageInfo" v-if="message.hasOwnProperty('info')">
+                    {{ message.info }}
+                </div>
+                <div class="message" v-else>
+                    <div class="messageUsername">{{ message.username }}:</div>
+                    <div class="messageContent">{{ message.message }}</div>
+                </div>
+
+            </div>
+        </div>
+
+        <form id="formChat">
+            <input type="text" id="inputChat">
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</body>
+
+</html>
